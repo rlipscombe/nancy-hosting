@@ -17,11 +17,12 @@ have permission for that. For example:
 Note: Nancy requires .NET 4.0.
 To install this on a default-install Windows Server 2008 R2 Standard box,
 you'll need to download and install it from [1] (for the standalone installer).
+You need *no* other Windows Features or Roles installed, at least for this sample.
 
 [1] Microsoft .NET Framework 4 (Standalone Installer)
     http://www.microsoft.com/en-us/download/details.aspx?id=17718
 
 Bugs:
- * If you specify a URL on the command line, the base path no longer matches,
-   so you'll get a "404 Not Found". As a quick fix, I added a route for /nancy
-   to match the second URL example above.
+ * [ ] If you specify a URL on the command line, and you don't specify a trailing /,
+       the base path no longer matches, so you'll get a "404 Not Found".
+       As a quick fix, I added a route for /nancy to match the second URL example above.
