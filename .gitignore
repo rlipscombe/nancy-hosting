@@ -1,4 +1,10 @@
+# Ignore Visual Studio per-user files.
 *.suo
 *.user
+
+# Ignore output directories.
 bin
 obj
+
+# Ignore NuGet packages.
+packages
