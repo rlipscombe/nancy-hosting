@@ -2,6 +2,7 @@
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Threading;
+using Nancy;
 using Nancy.Hosting.Wcf;
 
 namespace WcfHost
@@ -17,13 +18,21 @@ namespace WcfHost
                 stop.Set();
             };
 
-            var host = new WebServiceHost(new NancyWcfGenericService(), new Uri("http://localhost:1234/base/"));
+            var host = new WebServiceHost(new NancyWcfGenericService(), new Uri("http://localhost:1234/"));
             host.AddServiceEndpoint(typeof(NancyWcfGenericService), new WebHttpBinding(), "");
             host.Open();
 
             stop.WaitOne();
 
             host.Close();
+        }
+    }
+
+    public class HelloModule : NancyModule
+    {
+        public HelloModule()
+        {
+            Get["/"] = _ => "Hello World!";
         }
     }
 }
