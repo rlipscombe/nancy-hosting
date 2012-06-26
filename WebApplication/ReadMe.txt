@@ -9,7 +9,7 @@ It uses an HTTP Handler, which requires some of IIS to be installed.
 Note: Nancy requires .NET 4.0.
 To install this on a default-install Windows Server 2008 R2 Standard box,
 you'll need to download and install it from [1] (for the standalone installer).
-You need *no* other Windows Features or Roles installed, at least for this sample.
+You all also need some other Windows Features installed, as detailed below.
 
 [1] Microsoft .NET Framework 4 (Standalone Installer)
     http://www.microsoft.com/en-us/download/details.aspx?id=17718
