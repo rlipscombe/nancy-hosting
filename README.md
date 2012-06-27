@@ -12,9 +12,11 @@ It might be possible to use the OWIN host, but I've not looked at that yet.
 
 You could also write a custom host, but I've assumed that, at best, it's equivalent to Nancy's built-in self-hosting.
 
+Note that self-hosting, WCF-hosting and ASP.NET-hosting all use HTTP.SYS under the hood, so they all support port-sharing (multiple namespaces on the same port).
+
 ## Self Hosting ##
 
-Hosting in any executable.
+Hosting in any executable, using HttpListener.
 
 Requirements:
 
@@ -31,6 +33,8 @@ Disadvantages:
 * An extra service to support.
 
 ## WCF Hosting ##
+
+Hosting in any executable, using the WCF Web host.
 
 Requirements:
 
