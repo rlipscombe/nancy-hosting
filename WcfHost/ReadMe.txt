@@ -22,6 +22,17 @@ You need *no* other Windows Features or Roles installed, at least for this sampl
 [1] Microsoft .NET Framework 4 (Standalone Installer)
     http://www.microsoft.com/en-us/download/details.aspx?id=17718
 
+Configuring for SSL:
+
+> netsh http add urlacl url=https://+:12344/ user=HOME\roger
+> certutil -store My
+
+(this displays a list of the available certificates; pick the appropriate one)
+
+> netsh http add sslcert ipport=0.0.0.0:12344 certhash=dbd7af60fac84478ba507de1b638ed6f40c6c46b appid={795E1F1F-13AE-4145-9AB1-7B504031442D}
+
+(replace the certhash value with the one displayed by certutil -- remove the spaces; the appid is an arbitrary GUID).
+
 Bugs:
  * [ ] If you specify a URL on the command line, and you don't specify a trailing /,
        the base path no longer matches, so you'll get a "404 Not Found".

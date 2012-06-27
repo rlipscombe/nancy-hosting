@@ -23,7 +23,15 @@ namespace WcfHost
             };
 
             var host = new WebServiceHost(new NancyWcfGenericService(), new Uri(uri));
-            host.AddServiceEndpoint(typeof(NancyWcfGenericService), new WebHttpBinding(), "");
+
+            // Use the correct security mode for the URL scheme.
+            WebHttpBinding binding;
+            if (uri.StartsWith("https://"))
+                binding = new WebHttpBinding(WebHttpSecurityMode.Transport);
+            else
+                binding = new WebHttpBinding();
+
+            host.AddServiceEndpoint(typeof(NancyWcfGenericService), binding, "");
             host.Open();
             Console.WriteLine("Nancy WCF Host listening on {0}", uri);
             Console.WriteLine("Press Ctrl+C to quit.");
