@@ -15,8 +15,11 @@ have permission for that. For example:
 > netsh http add urlacl url=http://+:80/nancy user=HOME\roger
 
 Note: Nancy requires .NET 4.0.
-To install this on a default-install Windows Server 2008 R2 Standard box,
-you'll need to download and install it from [1] (for the standalone installer).
+
+To install this on a default-install Windows Server 2008 Standard or
+Windows Server 2008 R2 Standard box, you'll need to download and install
+it from [1] (for the standalone installer).
+
 You need *no* other Windows Features or Roles installed, at least for this sample.
 
 [1] Microsoft .NET Framework 4 (Standalone Installer)

@@ -36,6 +36,12 @@ Display Name                                            Name
         [X] Security                                    Web-Security           
             [X] Request Filtering                       Web-Filtering          
 
+On Windows Server 2008, use the following command (taken from http://learn.iis.net/page.aspx/132/installing-iis-from-the-command-line/):
+
+> start /w pkgmgr /iu:IIS-WebServerRole;IIS-WebServer;IIS-CommonHttpFeatures;IIS-StaticContent;IIS-DefaultDocument;IIS-DirectoryBrowsing;IIS-HttpErrors;IIS-HttpRedirect
+> start /w pkgmgr /iu:IIS-ApplicationDevelopment;IIS-ASPNET;IIS-NetFxExtensibility;IIS-ISAPIExtensions;IIS-ISAPIFilter
+> start /w pkgmgr /iu:IIS-Security;IIS-RequestFiltering
+
 If you install ASP.NET _after_ .NET 4.0, you'll need to register it:
 
 > C:\Windows\Microsoft.NET\Framework64\v4.0.30319\aspnet_regiis.exe -i
