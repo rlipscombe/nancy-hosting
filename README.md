@@ -12,6 +12,24 @@ It might be possible to use the OWIN host, but I've not looked at that yet.
 
 You could also write a custom host, but I've assumed that, at best, it's equivalent to Nancy's built-in self-hosting.
 
+## Self Hosting ##
+
+Hosting in any executable.
+
+Requirements:
+
+ * .NET 4.0
+
+Advantages:
+
+* Simple deployment.
+
+Disadvantages:
+
+* Documented as *"self hosting is not intended for production use, but rather as a development server"*
+* Requires URL ACLs to exactly match the listen URI.
+* An extra service to support.
+
 ## WCF Hosting ##
 
 Requirements:
@@ -20,11 +38,11 @@ Requirements:
 
 Advantages:
 
-***TODO*** 
+* Simple deployment.
 
 Disadvantages:
 
-***TODO***
+* An extra service to support.
 
 ## ASP.NET Hosting ##
 
@@ -36,22 +54,8 @@ Requirements:
 
 Advantages:
 
-***TODO*** 
+ * No extra services to support.
 
 Disadvantages:
 
-***TODO***
-
-## Self Hosting ##
-
-Requirements:
-
- * .NET 4.0
-
-Advantages:
-
-***TODO*** 
-
-Disadvantages:
-
-***TODO***
+ * Requires ASP.NET to be installed.
