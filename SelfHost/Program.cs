@@ -16,14 +16,14 @@ namespace SelfHost
 
             var stop = new ManualResetEvent(false);
             Console.CancelKeyPress += (sender, e) =>
-            {
-                Console.WriteLine("^C");
-                stop.Set();
-            };
+                {
+                    Console.WriteLine("^C");
+                    stop.Set();
+                };
 
             var host = new NancyHost(new Uri(uri));
             host.Start();
-        
+
             Console.WriteLine("Nancy Self Host listening on {0}", uri);
             Console.WriteLine("Press Ctrl+C to quit.");
 
